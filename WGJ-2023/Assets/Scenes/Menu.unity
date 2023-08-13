@@ -429,6 +429,87 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1001 &939842181
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 462286885042950002, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462286885042950002, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462286885042950002, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462286885042950002, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 462286885042950002, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462286885042950002, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462286885042950002, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462286885042950002, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462286885042950002, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462286885042950002, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399132153132594680, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132280616205179381, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: sounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132280616205179381, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: sounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 32ae40420add0ed459bd68b38eaee2ba, type: 3}
+    - target: {fileID: 4132280616205179381, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: sounds.Array.data[0].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132280616205179381, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: sounds.Array.data[0].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132280616205179381, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: sounds.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132280616205179381, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: sounds.Array.data[0].soundName
+      value: Menu
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
 --- !u!1 &1153095898
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,7 +709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e62a77624e8f74e9a2c58a5dc35a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Game: Jogo
+  Game: Cenarios
   Settings: "Configura\xE7\xF5es"
   Credits: "Cr\xE9ditos"
 --- !u!1 &1808753284
@@ -1083,3 +1164,4 @@ SceneRoots:
   - {fileID: 1153095900}
   - {fileID: 2035385288}
   - {fileID: 1831761788}
+  - {fileID: 939842181}
