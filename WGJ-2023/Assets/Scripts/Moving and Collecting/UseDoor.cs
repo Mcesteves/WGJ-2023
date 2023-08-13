@@ -11,9 +11,13 @@ public class UseDoor : MovementManager
         movementStateSO.startPos = playerTransform.position;
         if (!interrupted)
         {
-            playerTransform.position = goToTransform.position;
+            if(transform.position.y < 7.0f)
+                playerTransform.position = new Vector3 (goToTransform.position.x, 8.0f, playerTransform.position.z);
+            else
+                playerTransform.position = new Vector3(goToTransform.position.x, -2.7f, playerTransform.position.z);
             movementStateSO.startPos = playerTransform.position;
         }
         interrupted = false;
+        movementStateSO.stopMovement = false;
     }
 }

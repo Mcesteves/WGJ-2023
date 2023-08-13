@@ -29,6 +29,7 @@ public class Iteractable : MovementManager
             }
         }
         interrupted = false;
+        movementStateSO.stopMovement = false;
     }
 
 }

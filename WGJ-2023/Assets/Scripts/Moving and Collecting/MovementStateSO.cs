@@ -7,5 +7,5 @@ public class MovementStateSO : ScriptableObject
 {
     [HideInInspector]public Vector3 startPos;
     public float speed;
-    [HideInInspector]public bool stopMovement = false;
+    public bool stopMovement = false;
 }

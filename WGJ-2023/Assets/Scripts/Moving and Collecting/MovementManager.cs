@@ -14,6 +14,7 @@ public class MovementManager : MonoBehaviour, IPointerClickHandler
     {
         playerTransform = GameObject.FindWithTag("Player").transform;
         movementStateSO.startPos = playerTransform.position;
+        movementStateSO.stopMovement = false;
     }
 
     public void OnPointerClick(PointerEventData pointerEventData)
@@ -31,6 +32,7 @@ public class MovementManager : MonoBehaviour, IPointerClickHandler
 
         movementStateSO.startPos = playerTransform.position;
         Vector2 diff = target - (Vector2)movementStateSO.startPos;
+        
 
         yield return new WaitUntil(() => movementStateSO.stopMovement == false);
 
