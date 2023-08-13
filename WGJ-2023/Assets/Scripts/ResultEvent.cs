@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class NewBehaviourScript : MonoBehaviour
+public class ResultEvent : MonoBehaviour
 {
     public item[] conditionalItems;
     public Image resultStick;
