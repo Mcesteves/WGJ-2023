@@ -25,7 +25,7 @@ public class MovementManager : MonoBehaviour, IPointerClickHandler
 
     public virtual IEnumerator GoToPosition(Vector2 target)
     {
-        if (movementStateSO.startPos.x != playerTransform.position.x)
+        if (Mathf.Abs(movementStateSO.startPos.x - playerTransform.position.x) > 0.15f)
         {
             movementStateSO.stopMovement = true;
         }
@@ -36,7 +36,7 @@ public class MovementManager : MonoBehaviour, IPointerClickHandler
 
         yield return new WaitUntil(() => movementStateSO.stopMovement == false);
 
-        while (diff.magnitude > 0.2f && !movementStateSO.stopMovement)
+        while (diff.magnitude > 0.15f && !movementStateSO.stopMovement)
         {
             playerTransform.Translate(movementStateSO.speed * diff.normalized * Time.deltaTime);
             diff = target - (Vector2)playerTransform.position;
@@ -59,4 +59,5 @@ public class MovementManager : MonoBehaviour, IPointerClickHandler
 
         movementStateSO.stopMovement = false;
     }
+
 }
