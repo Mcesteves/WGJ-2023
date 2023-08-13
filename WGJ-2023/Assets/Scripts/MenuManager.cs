@@ -8,8 +8,11 @@ public class MenuManager : MonoBehaviour
     public string Game;
     public string Settings;
     public string Credits;
-    
 
+    private void Start()
+    {
+        AudioManager.instance.Play("Menu");
+    }
     public void StartGame ()
     {   
         SceneManager.LoadScene(Game);

@@ -16,6 +16,7 @@ public enum item
     plants,
     stone,
     stick,
+    tube,
 }
 
 [CreateAssetMenu(fileName = "InventorySO", menuName = "ScriptableObjects/Inventory")]
