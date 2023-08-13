@@ -82,4 +82,36 @@ public class InventorySO : ScriptableObject
                 break;
         }
     }
+    public bool GetType(item itemType)
+    {
+        switch (itemType)
+        {
+            case item.chalk:
+                return chalk;
+            case item.frog:
+                return frog;
+            case item.broom:
+                return broom;
+            case item.candleBox:
+                return candleBox;
+            case item.blackPaint:
+                return blackPaint;
+            case item.glitter:
+                return glitter;
+            case item.hat:
+                return hat;
+            case item.key:
+                return key;
+            case item.trophy:
+                return trophy;
+            case item.plants:
+                return hat;
+            case item.stone:
+                return stone;
+            case item.stick:
+                return stick;
+                
+        }
+        return false;
+    }
 }
