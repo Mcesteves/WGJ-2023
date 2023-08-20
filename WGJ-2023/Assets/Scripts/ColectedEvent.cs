@@ -6,21 +6,18 @@ using UnityEngine.UI;
 
 public class ColectedEvent : MonoBehaviour
 {
-    public UnityEvent OnItemCollected;
     public item itemType;
     public InventorySO inventory;
-    public Image stick;
 
+    private void Start()
+    {
+        Iteractable.onColected += UpdateInventory;
+    }
     public void UpdateInventory ()
     {
         if(inventory.GetType(itemType) == true)
         {
-            OnItemCollected?.Invoke();
+            GetComponent<Image>().enabled = true;
         }
-    }
-
-    public void ActiveItemOnInventory ()
-    {
-        stick.enabled = true;
     }
 }

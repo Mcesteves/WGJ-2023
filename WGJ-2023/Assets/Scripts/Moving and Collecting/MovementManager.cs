@@ -9,12 +9,16 @@ public class MovementManager : MonoBehaviour, IPointerClickHandler
     [HideInInspector]public bool interrupted;
     public MovementStateSO movementStateSO;
     [HideInInspector] public Transform playerTransform;
+    static public float janitorMin;
+    static public float principalMax;
 
     private void Start()
     {
         playerTransform = GameObject.FindWithTag("Player").transform;
         movementStateSO.startPos = playerTransform.position;
-        movementStateSO.stopMovement = false;
+        movementStateSO.ResetMovementStateSO();
+        GameManager.onJanitorUnlock += movementStateSO.UnlockJanitorRoom;
+        GameManager.onPrincipalUnlock += movementStateSO.UnlockPrincipalRoom;
     }
 
     public void OnPointerClick(PointerEventData pointerEventData)
@@ -25,6 +29,10 @@ public class MovementManager : MonoBehaviour, IPointerClickHandler
 
     public virtual IEnumerator GoToPosition(Vector2 target)
     {
+        if (movementStateSO.janitorLocked && playerTransform.position.y < 7.0f)
+            target.x = Mathf.Clamp(target.x, janitorMin + 0.7f, 100f);
+        if (movementStateSO.principalLocked && playerTransform.position.y > 7.0f)
+            target.x = Mathf.Clamp(target.x, -100f, principalMax - 0.5f);
         if (Mathf.Abs(movementStateSO.startPos.x - playerTransform.position.x) > 0.15f)
         {
             movementStateSO.stopMovement = true;

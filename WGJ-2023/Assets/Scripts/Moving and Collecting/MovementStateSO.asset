@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61eeaf636e4099d4085b70afc61e9d05, type: 3}
   m_Name: MovementStateSO
   m_EditorClassIdentifier: 
-  startPos: {x: -6.06, y: -2.7, z: 0}
+  startPos: {x: -26.15269, y: -2.69, z: 0}
   speed: 5
   stopMovement: 0
+  janitorLocked: 1
+  principalLocked: 1

@@ -17,27 +17,46 @@ public enum item
     stone,
     stick,
     tube,
+    ritual,
+    toilet,
 }
 
 [CreateAssetMenu(fileName = "InventorySO", menuName = "ScriptableObjects/Inventory")]
 public class InventorySO : ScriptableObject
 {
-    public bool chalk;
-    public bool frog;
-    public bool broom;
-    public bool candleBox;
-    public bool blackPaint;
-    public bool glitter;
-    public bool hat;
-    public bool key;
-    public bool trophy;
-    public bool plants;
-    public bool stone;
-    public bool stick;
+    private bool chalk;
+    private bool frog;
+    private bool broom;
+    private bool candleBox;
+    private bool blackPaint;
+    private bool glitter;
+    private bool hat;
+    private bool key;
+    private bool trophy;
+    private bool plants;
+    private bool stone;
+    private bool stick;
+    private bool ritual;
+    private bool toilet;
+    private int toiletCount = 0;
 
-    public void LoadInventory()
+    public void ResetInventory()
     {
-
+        chalk = false;
+        frog = false;
+        broom = false;
+        candleBox = false;
+        blackPaint = false;
+        glitter = false;
+        hat = false;
+        key = false;
+        trophy = false;
+        plants = false;
+        stone = false;
+        stick = false;
+        ritual = false;
+        toilet = false;
+        toiletCount = 0;
     }
 
     public void Collect(item itemType)
@@ -72,7 +91,7 @@ public class InventorySO : ScriptableObject
                 trophy = true;
                 break;
             case item.plants:
-                hat = true;
+                plants = true;
                 break;
             case item.stone:
                 stone = true;
@@ -80,6 +99,13 @@ public class InventorySO : ScriptableObject
             case item.stick:
                 stick = true;
                 break;
+            case item.ritual:
+                ritual = true;
+                break;
+            case item.toilet:
+                toilet = true;
+                break;
+
         }
     }
     public bool GetType(item itemType)
@@ -105,13 +131,28 @@ public class InventorySO : ScriptableObject
             case item.trophy:
                 return trophy;
             case item.plants:
-                return hat;
+                return plants;
             case item.stone:
                 return stone;
             case item.stick:
                 return stick;
-                
+            case item.ritual:
+                return ritual;
+            case item.toilet:
+                return toilet;
         }
         return false;
+    }
+
+    public bool IsAllCollected()
+    {
+        return chalk && frog && broom && candleBox && blackPaint && glitter
+            && hat && key && trophy && plants && stone && stick && toilet;
+    }
+
+    public int IncreaseToiletCount()
+    {
+        toiletCount++;
+        return toiletCount;
     }
 }

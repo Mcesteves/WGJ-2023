@@ -24,3 +24,6 @@ MonoBehaviour:
   plants: 0
   stone: 0
   stick: 0
+  ritual: 0
+  toilet: 0
+  toiletCount: 3
