@@ -36,6 +36,7 @@ public class InventorySO : ScriptableObject
     private bool plants;
     private bool stone;
     private bool stick;
+    private bool tube;
     private bool ritual;
     private bool toilet;
     private int toiletCount = 0;
@@ -56,6 +57,7 @@ public class InventorySO : ScriptableObject
         stick = false;
         ritual = false;
         toilet = false;
+        tube = false;
         toiletCount = 0;
     }
 
@@ -105,7 +107,9 @@ public class InventorySO : ScriptableObject
             case item.toilet:
                 toilet = true;
                 break;
-
+            case item.tube:
+                tube = true;
+                break;
         }
     }
     public bool GetType(item itemType)
@@ -140,13 +144,15 @@ public class InventorySO : ScriptableObject
                 return ritual;
             case item.toilet:
                 return toilet;
+            case item.tube:
+                return tube;
         }
         return false;
     }
 
     public bool IsAllCollected()
     {
-        return chalk && frog && broom && candleBox && blackPaint && glitter
+        return chalk && frog && broom && candleBox && blackPaint && glitter && tube
             && hat && key && trophy && plants && stone && stick && toilet;
     }
 

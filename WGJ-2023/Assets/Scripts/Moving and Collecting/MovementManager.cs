@@ -17,8 +17,8 @@ public class MovementManager : MonoBehaviour, IPointerClickHandler
         playerTransform = GameObject.FindWithTag("Player").transform;
         movementStateSO.startPos = playerTransform.position;
         movementStateSO.ResetMovementStateSO();
-        GameManager.onJanitorUnlock += movementStateSO.UnlockJanitorRoom;
-        GameManager.onPrincipalUnlock += movementStateSO.UnlockPrincipalRoom;
+        GameManager.OnJanitorUnlock += movementStateSO.UnlockJanitorRoom;
+        GameManager.OnPrincipalUnlock += movementStateSO.UnlockPrincipalRoom;
     }
 
     public void OnPointerClick(PointerEventData pointerEventData)

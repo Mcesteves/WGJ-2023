@@ -390,6 +390,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &30973374 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1061867832168609077, guid: 1eae2df6cf2733d49806d0d381c98f4e, type: 3}
+  m_PrefabInstance: {fileID: 1087998265}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc24b7df829d1d848a1577fe679c3b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &70854951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,6 +1697,10 @@ PrefabInstance:
       propertyPath: itemType
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1061867832168609077, guid: 1eae2df6cf2733d49806d0d381c98f4e, type: 3}
+      propertyPath: canCollect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3707970459717927864, guid: 1eae2df6cf2733d49806d0d381c98f4e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2638,6 +2653,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &733434248 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1061867832168609077, guid: 1eae2df6cf2733d49806d0d381c98f4e, type: 3}
+  m_PrefabInstance: {fileID: 74416364}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc24b7df829d1d848a1577fe679c3b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &780616219 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 766936174518960515, guid: ad232dbd812538e4a951cdb6394f22e5, type: 3}
@@ -3929,6 +3955,10 @@ PrefabInstance:
       propertyPath: itemType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1061867832168609077, guid: 1eae2df6cf2733d49806d0d381c98f4e, type: 3}
+      propertyPath: canCollect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3707970459717927864, guid: 1eae2df6cf2733d49806d0d381c98f4e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -4476,6 +4506,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1161921088 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1061867832168609077, guid: 1eae2df6cf2733d49806d0d381c98f4e, type: 3}
+  m_PrefabInstance: {fileID: 570413010}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc24b7df829d1d848a1577fe679c3b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1183521160 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6696788252488163109, guid: 0a1f51a67abcab2449610e20e971a0bb, type: 3}
@@ -6851,6 +6892,9 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: 12d68a9d8496dcb419878cae6a90016d, type: 2}
   fallenTrophy: {fileID: 1594578912}
   trophy: {fileID: 808270013}
+  candle: {fileID: 1161921088}
+  broom: {fileID: 30973374}
+  tube: {fileID: 733434248}
   janitorDoor: {fileID: 605135280}
   principalDoor: {fileID: 247158050}
 --- !u!4 &1746959597
