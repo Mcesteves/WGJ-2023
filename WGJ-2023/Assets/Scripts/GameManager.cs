@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
         OnPrincipalUnlock = null;
         onShowMessage = null;
         movementStateSO.ResetMovementStateSO();
+        AudioManager.instance.Stop("menu");
+        AudioManager.instance.Play("ingame");
     }
     void Start()
     {
@@ -43,6 +45,7 @@ public class GameManager : MonoBehaviour
     public void ActivateFallenTrophy()
     {
         fallenTrophy.SetActive(true);
+        onShowMessage?.Invoke("Algo estranho aconteceu...");
         fallenTrophy.GetComponent<Iteractable>().canCollect = true;
         fallenTrophy.GetComponent<Iteractable>().canInteract = true;
         trophy.SetActive(false);
