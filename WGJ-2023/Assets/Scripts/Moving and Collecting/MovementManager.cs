@@ -5,24 +5,31 @@ using UnityEngine.InputSystem;
 
 public class MovementManager : MonoBehaviour, IPointerClickHandler
 {
-
     [HideInInspector]public bool interrupted;
     public MovementStateSO movementStateSO;
     [HideInInspector] public Transform playerTransform;
     static public float janitorMin;
     static public float principalMax;
-
+    static public UIManager uiManager;
+    
     private void Start()
     {
         playerTransform = GameObject.FindWithTag("Player").transform;
+        uiManager = GameObject.FindWithTag("GameManager").GetComponent<UIManager>();
         movementStateSO.startPos = playerTransform.position;
-        movementStateSO.ResetMovementStateSO();
         GameManager.OnJanitorUnlock += movementStateSO.UnlockJanitorRoom;
         GameManager.OnPrincipalUnlock += movementStateSO.UnlockPrincipalRoom;
     }
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
+
+        if (UIManager.showingMessage)
+        {
+            uiManager.MessageUI.GetComponent<CanvasGroup>().alpha = 0;
+            UIManager.showingMessage = false;
+        }
+            
         Vector2 target = new Vector2(Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()).x, playerTransform.position.y);
         StartCoroutine(GoToPosition(target));
     }

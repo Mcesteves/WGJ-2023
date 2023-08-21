@@ -6,7 +6,6 @@ public class CameraMovement : MonoBehaviour
 {
     public float minX, maxX;
     public float cameraSpeed;
-    private bool canFollow;
     private Transform playerTransform;
     private Vector3 velocity = Vector3.zero;
 

@@ -10,21 +10,14 @@ public class UIManager : MonoBehaviour
     [HideInInspector]public static bool showingMessage;
     private void Start()
     {
-        Iteractable.onShowMessage += ShowMessage;
+        Iteractable.OnShowMessage += ShowMessage;
+        GameManager.onShowMessage += ShowMessage;
+        DoorTrigger.OnShowDoorMessage += ShowMessage;
     }
     public void ShowMessage(string message)
     {
-        StartCoroutine(ShowMessageCoroutine(message));
-    }
-
-
-    private IEnumerator ShowMessageCoroutine(string message)
-    {
-        MessageUI.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = message;
+        MessageUI.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = message;
         MessageUI.GetComponent<CanvasGroup>().alpha = 1;
         showingMessage = true;
-        yield return new WaitForSeconds(messageTime);
-        MessageUI.GetComponent<CanvasGroup>().alpha = 0;
-        showingMessage = false;
     }
 }

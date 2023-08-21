@@ -10,7 +10,7 @@ public class ResultEvent : MonoBehaviour
     public InventorySO inventory;
     private void Start()
     {
-        Iteractable.onColected += checkIfAllCollected;
+        Iteractable.OnColected += checkIfAllCollected;
     }
     public void checkIfAllCollected ()
     {
@@ -21,6 +21,6 @@ public class ResultEvent : MonoBehaviour
                 return;
             }
         }
-        GetComponent<Image>().enabled = true; ;
+        gameObject.GetComponent<Image>().enabled = true; ;
     }
 }

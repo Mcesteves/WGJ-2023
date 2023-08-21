@@ -13,15 +13,29 @@ public class GameManager : MonoBehaviour
     public Iteractable tube;
     public GameObject janitorDoor;
     public GameObject principalDoor;
+    public GameObject ritual;
+    public GameObject ritualTable;
     public static event Action OnJanitorUnlock;
     public static event Action OnPrincipalUnlock;
+    public static event Action<string> onShowMessage;
+    public MovementStateSO movementStateSO;
+
+    private bool janitorLock = true;
+    private void Awake()
+    {
+        OnJanitorUnlock = null;
+        OnPrincipalUnlock = null;
+        onShowMessage = null;
+        movementStateSO.ResetMovementStateSO();
+    }
     void Start()
     {
         inventory.ResetInventory();
-        Iteractable.onFlushed += ActivateFallenTrophy;
-        Iteractable.onColected += UnlockJanitorDoor;
-        Iteractable.onColected += UnlockPrincipalDoor;
-        Iteractable.onColected += UnlockTube;
+        Iteractable.OnFlushed += ActivateFallenTrophy;
+        Iteractable.OnColected += UnlockJanitorDoor;
+        Iteractable.OnColected += UnlockPrincipalDoor;
+        Iteractable.OnColected += UnlockTube;
+        Iteractable.OnRitual += MakeRitual;
         MovementManager.janitorMin = janitorDoor.transform.position.x;
         MovementManager.principalMax = principalDoor.transform.position.x;
     }
@@ -38,21 +52,23 @@ public class GameManager : MonoBehaviour
     {
         if (inventory.IsAllCollected())
         {
+            onShowMessage?.Invoke("Você foi chamado na sala da diretora");
             principalDoor.SetActive(false);
+            ritualTable.GetComponent<Iteractable>().canInteract = true;
             OnPrincipalUnlock?.Invoke();
         }
     }
 
     public void UnlockJanitorDoor()
     {
-        if (inventory.GetType(item.key))
+        if (janitorLock && inventory.GetType(item.key))
         {
             janitorDoor.SetActive(false);
             OnJanitorUnlock?.Invoke();
             candle.canCollect = true;
             broom.canCollect = true;
-        }
-            
+            janitorLock = false;
+        }    
     }
 
     public void UnlockTube()
@@ -61,5 +77,20 @@ public class GameManager : MonoBehaviour
         {
             tube.canCollect = true;
         }
+    }
+
+    public void MakeRitual()
+    {
+        StartCoroutine(StartRitual());
+    }
+
+    private IEnumerator StartRitual()
+    {
+        if (!UIManager.showingMessage)
+            onShowMessage?.Invoke(ritual.GetComponent<Iteractable>().message);
+        AudioManager.instance.Play("blabla_player");
+        yield return new WaitForSeconds(0.2f);
+        ritual.SetActive(true);
+        AudioManager.instance.Play("pop_sound");
     }
 }

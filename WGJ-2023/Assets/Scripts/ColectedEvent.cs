@@ -11,13 +11,13 @@ public class ColectedEvent : MonoBehaviour
 
     private void Start()
     {
-        Iteractable.onColected += UpdateInventory;
+        Iteractable.OnColected += UpdateInventory;
     }
     public void UpdateInventory ()
     {
         if(inventory.GetType(itemType) == true)
         {
-            GetComponent<Image>().enabled = true;
+            gameObject.GetComponent<Image>().enabled = true;
         }
     }
 }

@@ -19,6 +19,7 @@ public enum item
     tube,
     ritual,
     toilet,
+    npc
 }
 
 [CreateAssetMenu(fileName = "InventorySO", menuName = "ScriptableObjects/Inventory")]

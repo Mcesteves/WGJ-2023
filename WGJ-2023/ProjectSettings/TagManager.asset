@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Door
   - Sfx
   - Music
+  - GameManager
   layers:
   - Default
   - TransparentFX

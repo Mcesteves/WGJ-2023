@@ -9,9 +9,21 @@ public class Iteractable : MovementManager
     public bool canInteract;
     public item itemType;
     public bool canCollect;
-    public static event Action<string> onShowMessage;
-    public static event Action onColected;
-    public static event Action onFlushed;
+    public static event Action<string> OnShowMessage;
+    public static event Action OnColected;
+    public static event Action OnFlushed;
+    public static event Action OnRitual;
+
+    public void Awake()
+    {
+        if(itemType == item.chalk)
+        {
+            OnShowMessage = null;
+            OnColected = null;
+            OnFlushed = null;
+            OnRitual = null;
+        }
+    }
     public override IEnumerator GoToPosition(Vector2 target)
     {
         yield return base.GoToPosition(target);
@@ -21,7 +33,7 @@ public class Iteractable : MovementManager
             if (canCollect)
             {
                 inventory.Collect(itemType);
-                onColected?.Invoke();
+                OnColected?.Invoke();
                 Destroy(this.gameObject);
             }
             else if(itemType == item.toilet)
@@ -31,15 +43,20 @@ public class Iteractable : MovementManager
                 if (count == 3)
                 {
                     inventory.Collect(itemType);
-                    onColected?.Invoke();
+                    OnColected?.Invoke();
                     Destroy(this.gameObject);
-                    onFlushed?.Invoke();
+                    OnFlushed?.Invoke();
                 }
             }
-            else
+            else if (itemType == item.ritual)
             {
+                OnRitual?.Invoke();
+            }
+            else if(itemType == item.npc)
+            {
+                Debug.Log(message);
                 if(!UIManager.showingMessage)
-                    onShowMessage?.Invoke(message);
+                    OnShowMessage?.Invoke(message);
             }
         }
         interrupted = false;
