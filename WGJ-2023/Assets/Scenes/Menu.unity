@@ -840,7 +840,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 86166e6727e9ab54ba1d2cc44675277e, type: 3}
     - target: {fileID: 4132280616205179381, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: sounds.Array.data[6].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132280616205179381, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: sounds.Array.data[6].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132280616205179381, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
       propertyPath: sounds.Array.data[7].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9079a39ec62075f47843642d6f550bc9, type: 3}
+    - target: {fileID: 4132280616205179381, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: sounds.Array.data[8].clip
       value: 
       objectReference: {fileID: 8300000, guid: f11818506cf7ad440ab4ed8d78148604, type: 3}
     - target: {fileID: 4132280616205179381, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
@@ -876,6 +888,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4132280616205179381, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: sounds.Array.data[8].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132280616205179381, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
       propertyPath: sounds.Array.data[0].soundName
       value: menu
       objectReference: {fileID: 0}
@@ -905,6 +921,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4132280616205179381, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
       propertyPath: sounds.Array.data[7].soundName
+      value: pop_sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132280616205179381, guid: 6b38677a9bc4da64da24f76144e6c563, type: 3}
+      propertyPath: sounds.Array.data[8].soundName
       value: janitor
       objectReference: {fileID: 0}
     m_RemovedComponents: []

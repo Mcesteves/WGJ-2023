@@ -84,15 +84,9 @@ public class GameManager : MonoBehaviour
 
     public void MakeRitual()
     {
-        StartCoroutine(StartRitual());
-    }
-
-    private IEnumerator StartRitual()
-    {
         onShowMessage?.Invoke(ritualTable.GetComponent<Iteractable>().message);
-        AudioManager.instance.Play("blabla_player");
-        yield return new WaitForSeconds(0.2f);
-        ritual.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f,1.0f);
+        AudioManager.instance.Play("player");
+        ritual.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         AudioManager.instance.Play("pop_sound");
     }
 }
