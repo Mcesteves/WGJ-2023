@@ -54,7 +54,6 @@ public class Iteractable : MovementManager
             }
             else if(itemType == item.npc)
             {
-                Debug.Log(message);
                 if(!UIManager.showingMessage)
                     OnShowMessage?.Invoke(message);
             }

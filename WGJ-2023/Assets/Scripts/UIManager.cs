@@ -6,7 +6,6 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public GameObject MessageUI;
-    public float messageTime;
     [HideInInspector]public static bool showingMessage;
     private void Start()
     {
