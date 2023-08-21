@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     {
         if (inventory.IsAllCollected())
         {
-            onShowMessage?.Invoke("Você foi chamado na sala da diretora");
+            onShowMessage?.Invoke("Você foi chamada na sala da diretora");
             principalDoor.SetActive(false);
             ritualTable.GetComponent<Iteractable>().canInteract = true;
             OnPrincipalUnlock?.Invoke();
@@ -86,8 +86,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator StartRitual()
     {
-        if (!UIManager.showingMessage)
-            onShowMessage?.Invoke(ritual.GetComponent<Iteractable>().message);
+        onShowMessage?.Invoke(ritualTable.GetComponent<Iteractable>().message);
         AudioManager.instance.Play("blabla_player");
         yield return new WaitForSeconds(0.2f);
         ritual.SetActive(true);
