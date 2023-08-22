@@ -33,6 +33,7 @@ public class Iteractable : MovementManager
             if (canCollect)
             {
                 inventory.Collect(itemType);
+                AudioManager.instance.Play("plim");
                 OnColected?.Invoke();
                 Destroy(this.gameObject);
             }

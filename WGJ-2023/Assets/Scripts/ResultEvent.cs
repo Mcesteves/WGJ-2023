@@ -21,6 +21,6 @@ public class ResultEvent : MonoBehaviour
                 return;
             }
         }
-        gameObject.GetComponent<Image>().enabled = true; ;
+        gameObject.GetComponent<Image>().enabled = true;
     }
 }
