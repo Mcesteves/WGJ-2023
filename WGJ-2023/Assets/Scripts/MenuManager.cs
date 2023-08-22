@@ -12,6 +12,7 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         AudioManager.instance.Play("menu");
+        AudioManager.instance.Stop("ingame");
     }
     public void StartGame ()
     {   
