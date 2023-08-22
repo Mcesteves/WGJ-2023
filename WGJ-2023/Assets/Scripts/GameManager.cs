@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -88,5 +89,12 @@ public class GameManager : MonoBehaviour
         AudioManager.instance.Play("player");
         ritual.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         AudioManager.instance.Play("pop_sound");
+        StartCoroutine(EndGame());
+    }
+
+    private IEnumerator EndGame()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("Fim do Jogo");
     }
 }

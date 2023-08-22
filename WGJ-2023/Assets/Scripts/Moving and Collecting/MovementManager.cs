@@ -48,6 +48,14 @@ public class MovementManager : MonoBehaviour, IPointerClickHandler
         movementStateSO.startPos = playerTransform.position;
         Vector2 diff = target - (Vector2)movementStateSO.startPos;
         
+        if(target.x < playerTransform.position.x && playerTransform.localScale.x > 0f)
+        {
+            playerTransform.localScale = new Vector3(-playerTransform.localScale.x, playerTransform.localScale.y, playerTransform.localScale.z);
+        }
+        else if (target.x > playerTransform.position.x && playerTransform.localScale.x < 0f)
+        {
+            playerTransform.localScale = new Vector3(-playerTransform.localScale.x, playerTransform.localScale.y, playerTransform.localScale.z);
+        }
 
         yield return new WaitUntil(() => movementStateSO.stopMovement == false);
 
